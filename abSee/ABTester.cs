@@ -12,10 +12,10 @@ namespace abSee
 		[DataMember(Order = 1)]
 		public Guid Id { get; set; }
 
-		[DataMember(Order = 3)]
+		[DataMember(Order = 2)]
 		public DateTime Started { get; set; }
 
-		[DataMember(Order = 4)]
+		[DataMember(Order = 3)]
 		public string MachineName { get; set; }
 
 
@@ -41,12 +41,17 @@ namespace abSee
 			}
 		}
 
+		public static string Test(string name, string option1, string option2, string conversion)
+		{
+			return Test(name, new string[] { option1, option2 }, conversion);
+		}
+
 		public static string Test(string name, string[] options, string conversion)
 		{
 			throw new NotImplementedException();
 		}
 
-		public static void Conversion(string name)
+		public static void Convert(string name)
 		{
 			throw new NotImplementedException();
 		}
