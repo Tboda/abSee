@@ -48,6 +48,10 @@ namespace abSee
 
 		public static string Test(string name, string[] options, string conversion)
 		{
+			//Randomly select which option to use
+			//Store the new test in the IStorage
+			//return the selected option
+
 			throw new NotImplementedException();
 		}
 
