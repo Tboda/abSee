@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using abSee.Entities;
 
 namespace abSee.Storage
 {
@@ -13,12 +14,12 @@ namespace abSee.Storage
         /// <summary>
         /// Saves a set test result
         /// </summary>
-		void SaveResults();
+		void SaveResults(ABSeeResult result);
         
         /// <summary>
         /// gets test results for a given test
         /// </summary>
         /// <param name="testName">The name of the test to get results for</param>
-		void GetResults(string testName);
+		List<ABSeeResult> GetResults(string testName);
 	}
 }

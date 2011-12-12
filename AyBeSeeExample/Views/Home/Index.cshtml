@@ -5,6 +5,7 @@
 }
 
 <form method="post" action="/Home/Convert">
+    @*This looks pretty shit, maybe put in some helpers for Buttons and Inputs etc.?*@
 	<input type="image" name="submit" value="downloaded"
 		src="@(Url.Content("~/Public/img/" +
 		abSee.ABTester.Test("download-button", new string[] { "greenbutton.png", "redbutton.png" }, "downloaded")))

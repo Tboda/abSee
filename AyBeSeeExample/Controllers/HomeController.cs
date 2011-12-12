@@ -20,6 +20,7 @@ namespace AyBeSeeExample.Controllers
 		[HttpPost]
 		public ActionResult Convert(string submit)
 		{
+            //Tell the ABTester this was the "downloaded" event
 			ABTester.Convert(submit);
 
 			TempData["Message"] = "Thanks mate!";
