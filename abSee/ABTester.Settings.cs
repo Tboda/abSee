@@ -38,6 +38,7 @@ namespace abSee
                 if (UserProvider == null)
                 {
                     //default
+                    UserProvider = new IpAddressIdentity();
                 }
 			}
 

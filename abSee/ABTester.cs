@@ -33,16 +33,41 @@ namespace abSee
             _rand = new Random();
         }
 
-        internal string TestImpl(string name, string[] options, string conversion)
+        internal string TestImpl(string name, string[] options)
         {
             //Randomly select which option to use
 
             var output = options[_rand.Next(options.Length)];
             
             //Store the new test in the IStorage
+            var result = new ABSeeResult
+            {
+                Converted = false,//not yet
+                Option = output,
+                TesterId = Id,
+                TestName = name,
+                User = User
+            };
+
+            Settings.Storage.SaveResults(result);
+
             //return the selected option
             
             return output;
+        }
+
+        internal void ConvertImpl(string name)
+        {
+            var results = Settings.Storage.GetResults(name);
+
+            //TODO - This could be done better, needs testing
+            var userResult = results.LastOrDefault(r => r.User == User && !r.Converted);
+            //Get the result and update the conversion status
+            if (userResult == null) return;
+
+            userResult.Converted = true;
+
+            Settings.Storage.SaveResults(userResult);
         }
 
 	}

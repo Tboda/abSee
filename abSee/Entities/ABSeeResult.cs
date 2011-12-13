@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace abSee.Entities
+namespace abSee
 {
 	public class ABSeeResult
 	{
+        public Guid TesterId { get; set; }//?
         public string User { get; set; }//??
         public string TestName { get; set; }
         public string Option { get; set; }
-        public string ConvertName { get; set; }
         public bool Converted { get; set; }
 	}
 }

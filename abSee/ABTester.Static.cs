@@ -47,9 +47,9 @@ namespace abSee
         /// <param name="option2"></param>
         /// <param name="conversion">The name of the conversion event for this test</param>
         /// <returns></returns>
-		public static string Test(string name, string option1, string option2, string conversion)
+		public static string Test(string name, string option1, string option2)
 		{
-			return Test(name, new string[] { option1, option2 }, conversion);
+			return Test(name, new string[] { option1, option2 });
 		}
 
         /// <summary>
@@ -59,20 +59,20 @@ namespace abSee
         /// <param name="options">A list of options</param>
         /// <param name="conversion">The name of the conversion event for this test</param>
         /// <returns></returns>
-		public static string Test(string name, string[] options, string conversion)
+		public static string Test(string name, string[] options)
 		{            
             if (Current == null) return options[0];
 
-            return Current.TestImpl(name, options, conversion);
+            return Current.TestImpl(name, options);
 		}
 
         /// <summary>
         /// Triggers a conversion event
         /// </summary>
         /// <param name="name"></param>
-		public static void Convert(string name)
+        public static void Convert(string name)
 		{
-			throw new NotImplementedException();
+            Current.ConvertImpl(name);
 		}
 	}
 }

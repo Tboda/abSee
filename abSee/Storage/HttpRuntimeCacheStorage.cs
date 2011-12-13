@@ -22,9 +22,16 @@ namespace abSee.Storage
             return CacheKeyPrefix + testname;
         }
 
-        public void SaveResults(Entities.ABSeeResult result)
+        public void SaveResults(ABSeeResult result)
         {
             var results = GetResults(result.TestName);
+
+            //Could probably be done better
+            if (results.Any(r => r.TesterId == result.TesterId))
+            {
+                results.RemoveAll(r => r.TesterId == result.TesterId);
+            }
+            
             results.Add(result);
 
             lock (results)
@@ -33,9 +40,17 @@ namespace abSee.Storage
             }
         }
 
-        public List<Entities.ABSeeResult> GetResults(string testName)
+        public List<ABSeeResult> GetResults(string testName)
         {
-            throw new NotImplementedException();
+            //Will this even work?
+            var result = HttpRuntime.Cache[GetCacheKey(testName)] as List<ABSeeResult>;
+
+            if (result == null)
+            {
+                result = new List<ABSeeResult>();
+            }
+
+            return result;
         }
 
         private void InsertIntoCache(string key, object value)
