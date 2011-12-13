@@ -42,7 +42,7 @@ namespace AyBeSeeExample
 
 		protected void Application_BeginRequest()
 		{
-			ABTester.Start();
+			//ABTester.Start();
 		}
 
 		protected void Application_EndRequest()

@@ -55,11 +55,6 @@ namespace abSee
             return result;
 		}
 
-		public void Stop(bool discardResults)
-		{
-			throw new NotImplementedException();
-		}
-
 		public ABTester GetCurrentTester()
 		{
 			return Current;

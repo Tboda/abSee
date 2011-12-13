@@ -14,6 +14,7 @@ namespace AyBeSeeExample.Controllers
 
         public ActionResult Index()
         {
+            ABTester.Start();
             return View();
         }
 
