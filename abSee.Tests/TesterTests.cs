@@ -69,6 +69,29 @@ namespace abSee.Tests
         }
 
         [TestMethod]
+        public void Can_Ouput_Test_With_Five_Options()
+        {
+            using (var req = MvcMockHelpers.SimulateRequest("http://localhost/Test.aspx"))
+            {
+                ABTester.Start();
+
+                Assert.IsNotNull(ABTester.Current);
+
+                var option1 = "one";
+                var option2 = "two";
+                var option3 = "three";
+                var option4 = "four";
+                var option5 = "five";
+
+                var output = ABTester.Test("Can_Ouput_Test_With_Five_Options", option1, option2, option3, option4, option5);
+
+                var options = new List<string> { option1, option2, option3, option4, option5 };
+
+                Assert.IsTrue(options.Contains(output));
+            }
+        }
+
+        [TestMethod]
         public void Can_Get_Test_Results()
         {
             using (var req = MvcMockHelpers.SimulateRequest("http://localhost/Test.aspx"))
