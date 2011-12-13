@@ -1,0 +1,15 @@
+﻿
+@if (TempData["Message"] != null)
+{ 
+	<h5>@TempData["Message"]</h5>
+}
+
+@{
+    var results = abSee.ABTester.Settings.Storage.GetResults("download-button");
+}
+
+@foreach(var result in results)
+{
+    @:Option: @result.Option
+    @:Converted: @result.Converted.ToString()<br />
+}

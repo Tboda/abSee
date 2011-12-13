@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+	<metadata>
+		<id>abSee</id>
+		<version>0.1</version>
+		<authors>Damian Karzon,Tboda</authors>
+		<owners>Tboda</owners>
+		<description>An A/B Testing library for .NET</description>
+		<language>en-AU</language>
+		<projectUrl>https://github.com/Tboda/abSee</projectUrl>
+		<tags>A/B Testing</tags>
+	</metadata>
+    <files>
+        <file src="abSee\bin\Release\abSee.dll" target="lib\net40" />
+    </files>
+</package>

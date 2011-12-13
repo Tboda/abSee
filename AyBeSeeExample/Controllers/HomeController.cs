@@ -17,15 +17,18 @@ namespace AyBeSeeExample.Controllers
             return View();
         }
 
+        public ActionResult Results()
+        {
+            return View();
+        }
+
 		[HttpPost]
 		public ActionResult Convert(string submit)
 		{
             //Tell the ABTester this was the "downloaded" event
 			ABTester.Convert("download-button");
 
-			TempData["Message"] = "Thanks mate!";
-
-			return RedirectToAction("Index");
+            return RedirectToAction("Results");
 		}
 
     }

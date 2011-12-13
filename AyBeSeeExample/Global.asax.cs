@@ -47,7 +47,6 @@ namespace AyBeSeeExample
 
 		protected void Application_EndRequest()
 		{
-			ABTester.Stop();
 		}
 	}
 }

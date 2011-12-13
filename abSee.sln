@@ -14,6 +14,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AyBeSeeExample", "AyBeSeeExample\AyBeSeeExample.csproj", "{6036F3FD-CF3E-46D7-B65B-6026FBA56D14}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{A1482132-9BB6-4C38-8CD3-2594EB3119DE}"
+	ProjectSection(SolutionItems) = preProject
+		abSee.nuspec = abSee.nuspec
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = abSee.vsmdi
