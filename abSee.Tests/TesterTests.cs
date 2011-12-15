@@ -181,7 +181,7 @@ namespace abSee.Tests
         }
 
         [TestMethod]
-        public void Can_Run_Two_Tests_And_Convert_One()
+        public void Can_Run_Two_Tests_And_Get_One_Result()
         {
             using (var req = MvcMockHelpers.SimulateRequest("http://localhost/Test.aspx"))
             {
@@ -210,9 +210,8 @@ namespace abSee.Tests
                 var results = ABTester.GetResults(testname);
 
                 Assert.IsNotNull(results);
-                Assert.AreEqual(2, results.Count);
-                Assert.IsFalse(results[0].Converted);
-                Assert.IsTrue(results[1].Converted);
+                Assert.AreEqual(1, results.Count);
+                Assert.IsTrue(results[0].Converted);
             }
         }
 
