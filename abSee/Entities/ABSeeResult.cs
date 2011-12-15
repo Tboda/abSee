@@ -12,5 +12,8 @@ namespace abSee
         public string TestName { get; set; }
         public string Option { get; set; }
         public bool Converted { get; set; }
+
+        public DateTime Date { get; set; }
+        public DateTime? ConvertDate { get; set; }
 	}
 }

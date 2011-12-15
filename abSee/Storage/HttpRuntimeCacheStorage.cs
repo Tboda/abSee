@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web;
+using System.Collections;
 
 namespace abSee.Storage
 {
@@ -60,6 +61,34 @@ namespace abSee.Storage
                 slidingExpiration: System.Web.Caching.Cache.NoSlidingExpiration,
                 priority: System.Web.Caching.CacheItemPriority.Low,
                 onRemoveCallback: null);
+        }
+
+        public List<ABSeeTest> GetActiveTests()
+        {
+            var results = new List<ABSeeResult>();
+
+            foreach (DictionaryEntry e in HttpRuntime.Cache)
+            {
+                if (!e.Key.ToString().StartsWith(CacheKeyPrefix))
+                    continue;
+
+                var testResults = e.Value as List<ABSeeResult>;
+                if (testResults != null)
+                {
+                    foreach (var c in testResults)
+                        results.Add(c);
+                }
+            }
+
+            var tests = from r in results
+                        group r by r.TestName into g
+                        select new ABSeeTest
+                        {
+                            Name = g.Key,
+                            StartDate = g.Min(tr => tr.Date)
+                        };
+
+            return tests.ToList();
         }
     }
 }

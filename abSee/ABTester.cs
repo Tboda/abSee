@@ -65,7 +65,8 @@ namespace abSee
                 Option = output,
                 TesterId = Id,
                 TestName = name,
-                User = User
+                User = User,
+                Date = DateTime.Now
             };
 
             Settings.Storage.SaveResults(result);
@@ -86,6 +87,7 @@ namespace abSee
             if (userResult == null) return;
 
             userResult.Converted = true;
+            userResult.ConvertDate = DateTime.Now;
 
             Settings.Storage.SaveResults(userResult);
         }

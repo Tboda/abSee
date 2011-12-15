@@ -20,5 +20,11 @@ namespace abSee.Storage
         /// </summary>
         /// <param name="testName">The name of the test to get results for</param>
 		List<ABSeeResult> GetResults(string testName);
+
+        /// <summary>
+        /// gets all active tests
+        /// </summary>
+        /// <returns>List of active tests</returns>
+        List<ABSeeTest> GetActiveTests();
 	}
 }
