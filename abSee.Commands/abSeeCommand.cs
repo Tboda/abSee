@@ -20,7 +20,7 @@ namespace abSee.Commands
             var sw = new StringWriter();
 
             var p = new OptionSet() {
-                { "r|results",  "displays results for given test /n USAGE: absee -r [test-name]", 
+                { "r|results",  "displays results for given test \n USAGE: absee -r [test-name]", 
                   v => _command = Command.results },
                 { "l|list",  "displays all running tests", 
                   v => _command = Command.list },
@@ -57,7 +57,19 @@ namespace abSee.Commands
 
         private string showList()
         {
-            throw new NotImplementedException();
+            var tests = ABTester.Settings.Storage.GetActiveTests();
+
+            if (!tests.Any())
+                throw new ApplicationException("No active tests");
+
+            var sw = new StringWriter();
+
+            foreach (var t in tests)
+            {
+                sw.WriteLine(string.Format("{0,-20} {1}", t.Name, t.StartDate.ToString()));
+            }
+
+            return sw.ToString();
         }
 
         private string showResults(List<string> extras)
