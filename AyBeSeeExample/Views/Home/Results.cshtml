@@ -1,15 +1,30 @@
 ﻿
-@if (TempData["Message"] != null)
-{ 
-	<h5>@TempData["Message"]</h5>
-}
-
-@{
-    var results = abSee.ABTester.GetResults("download-button");
-}
-
-@foreach(var result in results)
+<ul>
+@foreach (var result in abSee.ABTester.GetResults("exampletest1"))
 {
-    @:Option: @result.Option
-    @:Converted: @result.Converted.ToString()<br />
+    <li>
+        Option: @result.Option
+        Converted: @result.Converted.ToString()
+    </li>
 }
+</ul>
+
+<ul>
+@foreach (var result in abSee.ABTester.GetResults("exampletest2"))
+{
+    <li>
+        Option: @result.Option
+        Converted: @result.Converted.ToString()
+    </li>
+}
+</ul>
+
+<ul>
+@foreach (var result in abSee.ABTester.GetResults("exampletest2"))
+{
+    <li>
+    Option: @result.Option
+    Converted: @result.Converted.ToString()
+    </li>
+}
+</ul>

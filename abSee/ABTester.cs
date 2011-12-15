@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using abSee.Storage;
 using System.Runtime.Serialization;
+using System.Web;
 
 namespace abSee
 {
@@ -20,21 +21,39 @@ namespace abSee
         public string Url { get; set; }
 
         private Random _rand;
+        private HttpContext _context;
 
         [Obsolete("Used for serialization")]
         public ABTester() { }
 
-        public ABTester(string url)
+        public ABTester(HttpContext context)
         {
+            _context = context;
+
             Id = Guid.NewGuid();
             MachineName = Environment.MachineName;
-            Url = url;
+            Url = _context.Request.Url.AbsoluteUri;
 
             _rand = new Random();
         }
 
+        internal string GetUserTestOption(string name)
+        {
+            var testcookie = _context.Request.Cookies["abseetest-" + name];
+            if (testcookie == null) return string.Empty;
+            return testcookie.Value;
+        }
+
         internal string TestImpl(string name, string[] options)
         {
+            //Check if the user has already seen this test
+            var tempOutput = GetUserTestOption(name);
+
+            if (!string.IsNullOrEmpty(tempOutput))
+            {
+                return tempOutput;
+            }
+
             //Randomly select which option to use
 
             var output = options[_rand.Next(options.Length)];
@@ -51,8 +70,9 @@ namespace abSee
 
             Settings.Storage.SaveResults(result);
 
-            //return the selected option
-            
+            _context.Response.AppendCookie(new HttpCookie("abseetest-" + name, output));
+
+            //return the selected option            
             return output;
         }
 

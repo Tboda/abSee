@@ -46,11 +46,11 @@ namespace abSee
                     return null;
             }
 
-            var result = new ABTester(url.OriginalString);
+            var result = new ABTester(context);
             Current = result;
 
             //TODO - User Storage
-            //result.User = ABTester.Settings.UserProvider.GetUser(context.Request);
+            result.User = ABTester.Settings.UserProvider.GetUser(context.Request);
 
             return result;
 		}

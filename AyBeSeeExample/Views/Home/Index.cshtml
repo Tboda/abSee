@@ -1,8 +1,6 @@
 ﻿
-<form method="post" action="@Url.Content("~/Home/Convert")">
-    @*This looks pretty shit, maybe put in some helpers for Buttons and Inputs etc.?*@
-	<input type="image" name="submit" value="downloaded"
-		src="@(new HtmlString(Url.Content("~/Public/img/") +
-		abSee.ABTester.Test("download-button", "greenbutton.png", "redbutton.png")))"
-		/>
-</form>
+<ul>
+    <li><a href="@Url.Content("~/Home/ExampleTest1")">Example Test 1</a></li>
+    <li><a href="@Url.Content("~/Home/ExampleTest2")">Example Test 2</a></li>
+    <li><a href="@Url.Content("~/Home/ExampleTest3")">Example Test 3</a></li>
+</ul>
