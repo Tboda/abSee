@@ -90,5 +90,38 @@ namespace abSee.Storage
 
             return tests.ToList();
         }
+
+
+        public int ClearResults(string testName)
+        {
+            var total = 0;
+
+            foreach (DictionaryEntry e in HttpRuntime.Cache)
+            {
+                if (e.Key.ToString() == GetCacheKey(testName))
+                {
+                    HttpRuntime.Cache.Remove(e.Key.ToString());
+                    total++;
+                }
+            }
+
+            return total;
+        }
+
+        public int ClearResults()
+        {
+            var total = 0;
+
+            foreach (DictionaryEntry e in HttpRuntime.Cache)
+            {
+                if (e.Key.ToString().StartsWith(CacheKeyPrefix))
+                {
+                    HttpRuntime.Cache.Remove(e.Key.ToString());
+                    total++;
+                }
+            }
+
+            return total;
+        }
     }
 }

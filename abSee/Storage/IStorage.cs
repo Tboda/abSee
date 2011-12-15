@@ -26,5 +26,16 @@ namespace abSee.Storage
         /// </summary>
         /// <returns>List of active tests</returns>
         List<ABSeeTest> GetActiveTests();
+
+        /// <summary>
+        /// Clears all results for the given test
+        /// </summary>
+        /// <param name="testName">test to clear results for</param>
+        int ClearResults(string testName);
+
+        /// <summary>
+        /// Clears all test results
+        /// </summary>
+        int ClearResults();
 	}
 }

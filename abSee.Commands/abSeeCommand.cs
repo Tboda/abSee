@@ -20,10 +20,12 @@ namespace abSee.Commands
             var sw = new StringWriter();
 
             var p = new OptionSet() {
-                { "r|results",  "displays results for given test \n USAGE: absee -r [test-name]", 
+                { "r|results",  "displays results for given test \nUSAGE: absee -r [test-name]", 
                   v => _command = Command.results },
                 { "l|list",  "displays all running tests", 
                   v => _command = Command.list },
+                { "c|clear",  "Clears results for test name (use -A to clear all) \nUSAGE: absee -c [test-name])", 
+                  v => _command = Command.clear },
                 { "h|help",  "show this message and exit", 
                   v => _showHelp = v != null },
             };
@@ -50,9 +52,33 @@ namespace abSee.Commands
                     return showResults(extras);
                 case Command.list:
                     return showList();
+                case Command.clear:
+                    return showClear(extras.FirstOrDefault());
             }
 
             throw new ArgumentException("Invalid arguments");
+        }
+
+        private string showClear(string testName)
+        {
+            if (string.IsNullOrWhiteSpace(testName))
+                throw new ArgumentNullException("No test name provided use -A for to clear all");
+
+            var sw = new StringWriter();
+            int resultsDeleted;
+
+            if (testName.ToUpper() == "-A")
+            {
+                resultsDeleted = ABTester.Settings.Storage.ClearResults();
+                sw.WriteLine(resultsDeleted + " results deleted from all tests");
+            }
+            else
+            {
+                resultsDeleted = ABTester.Settings.Storage.ClearResults(testName);
+                sw.WriteLine("{0} results deleted from test '{1}'", resultsDeleted, testName);
+            }
+
+            return sw.ToString();
         }
 
         private string showList()
@@ -128,7 +154,8 @@ namespace abSee.Commands
         private enum Command
         {
             results,
-            list
+            list,
+            clear
         }
     }
 }
