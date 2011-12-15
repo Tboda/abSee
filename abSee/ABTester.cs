@@ -46,16 +46,23 @@ namespace abSee
 
         internal string TestImpl(string name, string[] options)
         {
-            //Check if the user has already seen this test
-            var tempOutput = GetUserTestOption(name);
+            var results = Settings.Storage.GetResults(name);
 
-            if (!string.IsNullOrEmpty(tempOutput))
+            var userResult = results.LastOrDefault(r => r.User == User && !r.Converted);
+            //if the user has a result try get the previous option for the test
+            if (userResult != null)
             {
-                return tempOutput;
+                //Check if the user has already seen this test
+                var tempOutput = GetUserTestOption(name);
+
+                if (!string.IsNullOrEmpty(tempOutput))
+                {
+                    return tempOutput;
+                }
             }
 
             //Randomly select which option to use
-
+            //TODO - Maybe this could be overwritten with an interface or something?
             var output = options[_rand.Next(options.Length)];
             
             //Store the new test in the IStorage

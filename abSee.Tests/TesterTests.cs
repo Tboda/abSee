@@ -96,7 +96,7 @@ namespace abSee.Tests
         {
             using (var req = MvcMockHelpers.SimulateRequest("http://localhost/Test.aspx"))
             {
-                var results = ABTester.Settings.Storage.GetResults("Can_Get_Test_Results");
+                var results = ABTester.GetResults("Can_Get_Test_Results");
 
                 Assert.IsNotNull(results);
             }
@@ -120,10 +120,35 @@ namespace abSee.Tests
 
                 Assert.IsTrue(output == option1 || output == option2);
 
-                var results = ABTester.Settings.Storage.GetResults(testname);
+                var results = ABTester.GetResults(testname);
 
                 Assert.IsNotNull(results);
                 Assert.AreEqual(results.Count, 1);
+            }
+        }
+
+        [TestMethod]
+        public void Can_Run_Test_And_Get_Active_Tests()
+        {
+            using (var req = MvcMockHelpers.SimulateRequest("http://localhost/Test.aspx"))
+            {
+                ABTester.Start();
+
+                Assert.IsNotNull(ABTester.Current);
+
+                var testname = "Can_Run_Test_And_Get_Active_Tests";
+
+                var option1 = "one";
+                var option2 = "two";
+
+                var output = ABTester.Test(testname, option1, option2);
+
+                Assert.IsTrue(output == option1 || output == option2);
+
+                var results = ABTester.Settings.Storage.GetActiveTests();
+
+                Assert.IsNotNull(results);
+                Assert.IsTrue(results.Count > 0);
             }
         }
 
@@ -147,7 +172,7 @@ namespace abSee.Tests
 
                 ABTester.Convert(testname);
 
-                var results = ABTester.Settings.Storage.GetResults(testname);
+                var results = ABTester.GetResults(testname);
 
                 Assert.IsNotNull(results);
                 Assert.AreEqual(1, results.Count);
@@ -182,7 +207,7 @@ namespace abSee.Tests
 
                 ABTester.Convert(testname);
 
-                var results = ABTester.Settings.Storage.GetResults(testname);
+                var results = ABTester.GetResults(testname);
 
                 Assert.IsNotNull(results);
                 Assert.AreEqual(2, results.Count);
