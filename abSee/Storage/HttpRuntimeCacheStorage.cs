@@ -26,11 +26,7 @@ namespace abSee.Storage
         {
             var results = GetResults(result.TestName);
 
-            //Could probably be done better
-            if (results.Any(r => r.TesterId == result.TesterId))
-            {
-                results.RemoveAll(r => r.TesterId == result.TesterId);
-            }
+            results.RemoveAll(r => r.TesterId == result.TesterId);
             
             results.Add(result);
 
