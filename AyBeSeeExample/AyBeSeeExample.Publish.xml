@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\Dropbox\Tboda Share\AyBeSeeExample" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="LocalDropBox" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Content/themes/base/jquery.ui.button.css" publishTime="12/15/2011 19:02:43" />
+    <file relUrl="Views/Home/Results.cshtml" publishTime="12/15/2011 19:02:43" />
+    <file relUrl="Global.asax" publishTime="12/15/2011 19:02:43" />
+    <file relUrl="Views/_ViewStart.cshtml" publishTime="12/15/2011 19:02:43" />
+    <file relUrl="bin/WebActivator.dll" publishTime="12/15/2011 20:08:01" />
+    <file relUrl="Content/themes/base/jquery.ui.tabs.css" publishTime="12/15/2011 19:02:43" />
+    <file relUrl="Content/themes/base/jquery.ui.base.css" publishTime="12/15/2011 19:02:43" />
+    <file relUrl="bin/Microsoft.Web.Infrastructure.dll" publishTime="12/15/2011 20:08:01" />
+    <file relUrl="Content/themes/base/jquery.ui.all.css" publishTime="12/15/2011 19:02:43" />
+    <file relUrl="bin/NetBash.dll" publishTime="12/15/2011 20:08:01" />
+    <file relUrl="Content/themes/base/jquery.ui.autocomplete.css" publishTime="12/15/2011 19:02:43" />
+    <file relUrl="Views/Shared/Error.cshtml" publishTime="12/15/2011 19:02:43" />
+    <file relUrl="bin/abSee.dll" publishTime="12/15/2011 19:16:56" />
+    <file relUrl="bin/abSee.Commands.dll" publishTime="12/15/2011 20:08:19" />
+    <file relUrl="Views/Shared/_Layout.cshtml" publishTime="12/15/2011 19:26:46" />
+    <file relUrl="Content/themes/base/jquery.ui.accordion.css" publishTime="12/15/2011 19:02:43" />
+    <file relUrl="bin/AyBeSeeExample.dll" publishTime="12/15/2011 20:08:19" />
+    <file relUrl="packages.config" publishTime="12/15/2011 20:08:05" />
+    <file relUrl="Views/Home/Index.cshtml" publishTime="12/15/2011 20:02:35" />
+    <file relUrl="Content/themes/base/jquery.ui.dialog.css" publishTime="12/15/2011 19:02:43" />
+    <file relUrl="Content/themes/base/jquery.ui.progressbar.css" publishTime="12/15/2011 19:02:43" />
+    <file relUrl="Public/img/greenbutton.png" publishTime="12/15/2011 19:02:43" />
+    <file relUrl="bin/AyBeSeeExample.pdb" publishTime="12/15/2011 20:08:19" />
+    <file relUrl="Content/themes/base/jquery.ui.resizable.css" publishTime="12/15/2011 19:02:43" />
+    <file relUrl="Content/themes/base/jquery.ui.datepicker.css" publishTime="12/15/2011 19:02:43" />
+    <file relUrl="Content/themes/base/jquery.ui.theme.css" publishTime="12/15/2011 19:02:43" />
+    <file relUrl="Content/Site.css" publishTime="12/15/2011 19:02:43" />
+    <file relUrl="bin/abSee.Commands.pdb" publishTime="12/15/2011 20:08:19" />
+    <file relUrl="Content/themes/base/jquery.ui.selectable.css" publishTime="12/15/2011 19:02:43" />
+    <file relUrl="bin/abSee.pdb" publishTime="12/15/2011 19:16:56" />
+    <file relUrl="Web.config" publishTime="12/15/2011 19:16:57" />
+    <file relUrl="Content/themes/base/jquery.ui.slider.css" publishTime="12/15/2011 19:02:43" />
+    <file relUrl="Public/img/redbutton.png" publishTime="12/15/2011 19:02:43" />
+    <file relUrl="Views/Web.config" publishTime="12/15/2011 19:02:43" />
+    <file relUrl="Content/themes/base/jquery.ui.core.css" publishTime="12/15/2011 19:02:43" />
+  </publishProfile>
+</publishData>

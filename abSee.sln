@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{A1482132
 		abSee.nuspec = abSee.nuspec
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "abSee.Commands", "abSee.Commands\abSee.Commands.csproj", "{F87B2754-3FA8-4B80-B33F-178314209119}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = abSee.vsmdi
@@ -40,6 +42,10 @@ Global
 		{6036F3FD-CF3E-46D7-B65B-6026FBA56D14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6036F3FD-CF3E-46D7-B65B-6026FBA56D14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6036F3FD-CF3E-46D7-B65B-6026FBA56D14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F87B2754-3FA8-4B80-B33F-178314209119}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F87B2754-3FA8-4B80-B33F-178314209119}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F87B2754-3FA8-4B80-B33F-178314209119}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F87B2754-3FA8-4B80-B33F-178314209119}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

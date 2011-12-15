@@ -24,7 +24,7 @@ namespace AyBeSeeExample.Controllers
         }
 
 		[HttpPost]
-		public ActionResult Convert(string submit)
+		public ActionResult Convert()
 		{
             //Tell the ABTester this was the "downloaded" event
 			ABTester.Convert("download-button");
