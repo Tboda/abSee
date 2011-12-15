@@ -35,6 +35,7 @@ namespace AyBeSeeExample
 			RegisterRoutes(RouteTable.Routes);
 
 			//Set defaults here if we want...
+            NetBash.NetBash.Settings.WelcomeMessage = "Test out the abSee command for NetBash";
 		}
 
 		protected void Application_BeginRequest()
