@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+	<metadata>
+		<id>abSee.Commands</id>
+		<version>0.1</version>
+		<authors>Damian Karzon,Tboda</authors>
+		<owners>Tboda</owners>
+		<description>NetBash Commands for abSee A/B Testing library</description>
+		<language>en-AU</language>
+		<projectUrl>https://github.com/Tboda/abSee</projectUrl>
+		<tags>A/B Testing NetBash</tags>
+        <dependencies>
+            <dependency id="abSee" version="0.3" />
+            <dependency id="NetBash" version="0.3" />
+        </dependencies>
+	</metadata>
+    <files>
+        <file src="abSee.Commands\bin\Release\abSee.Commands.dll" target="lib\net40" />
+    </files>
+</package>

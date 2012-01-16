@@ -16,6 +16,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AyBeSeeExample", "AyBeSeeEx
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{A1482132-9BB6-4C38-8CD3-2594EB3119DE}"
 	ProjectSection(SolutionItems) = preProject
+		abSee.Commands.nuspec = abSee.Commands.nuspec
 		abSee.nuspec = abSee.nuspec
 	EndProjectSection
 EndProject
