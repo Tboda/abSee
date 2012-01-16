@@ -38,8 +38,8 @@
     <Reference Include="NDesk.Options">
       <HintPath>..\packages\NDesk.Options.0.2.1\lib\NDesk.Options.dll</HintPath>
     </Reference>
-    <Reference Include="NetBash, Version=0.2.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NetBash.0.2.3.1\lib\net40\NetBash.dll</HintPath>
+    <Reference Include="NetBash">
+      <HintPath>..\packages\NetBash.0.3.0.0\lib\net40\NetBash.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="abSeeCommand.cs" />
+    <Compile Include="App_Start\NetBashStart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

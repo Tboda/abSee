@@ -20,7 +20,6 @@ namespace abSee
 
         public string Url { get; set; }
 
-        private Random _rand;
         private HttpContext _context;
 
         [Obsolete("Used for serialization")]
@@ -33,8 +32,6 @@ namespace abSee
             Id = Guid.NewGuid();
             MachineName = Environment.MachineName;
             Url = _context.Request.Url.AbsoluteUri;
-
-            _rand = new Random();
         }
 
         internal string GetUserTestOption(string name)
@@ -61,9 +58,8 @@ namespace abSee
                 }
             }
 
-            //Randomly select which option to use
-            //TODO - Maybe this could be overwritten with an interface or something?
-            var output = options[_rand.Next(options.Length)];
+            //Select the option based on the OptionSelector
+            var output = Settings.OptionSelector.SelectOption(_context, User, options);
             
             //Store the new test in the IStorage
             var result = new ABSeeResult

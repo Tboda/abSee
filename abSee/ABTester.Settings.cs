@@ -21,6 +21,7 @@ namespace abSee
 
 			public static Storage.IStorage Storage { get; set; }
 			public static Storage.IUserProvider UserProvider { get; set; }
+            public static IOptionSelector OptionSelector { get; set; }
 			public static ITesterProvider TesterProvider { get; set; }
 
 			public static void EnsureTesterProvider()
@@ -39,6 +40,11 @@ namespace abSee
                 {
                     //default
                     UserProvider = new IpAddressIdentity();
+                }
+                if (OptionSelector == null)
+                {
+                    //default
+                    OptionSelector = new RandomOptionSelector();
                 }
 			}
 

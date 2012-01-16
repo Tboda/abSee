@@ -2,7 +2,7 @@
 <package>
 	<metadata>
 		<id>abSee</id>
-		<version>0.2</version>
+		<version>0.3</version>
 		<authors>Damian Karzon,Tboda</authors>
 		<owners>Tboda</owners>
 		<description>An A/B Testing library for .NET</description>
